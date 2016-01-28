@@ -22,7 +22,7 @@ import butterknife.ButterKnife;
  * 包含简单的SharedPreferences的简单封装
  * 包含App常用工具类
  *
- * App地址：
+ * App地址：https://github.com/maoranbian/MTime
  *
  * 计划更新更多MaterialDesign的示例。。。
  */
