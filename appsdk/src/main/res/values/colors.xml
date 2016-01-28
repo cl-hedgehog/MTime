@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="text_red">#d34f43</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_gray_9">#999</color>
+    <color name="text_gray_cbca">#cbcaca</color>
+    <color name="text_blue">#2ea7e0</color>
+    <color name="normal_red">#f16159</color>
+    <color name="pressed_red">#d34f43</color>
+
+    <color name="divide_cc">#cccccc</color>
+    <color name="divide_99">#999999</color>
+    <color name="dialog_bg_white">#f5f5f5</color>
+    <color name="message_pressed">#e5e5e5</color>
+    <color name="dialog_bg_gray">#cccccc</color>
+
+    <color name="trans_black_87">#DD000000</color>
+    <!-- 87% trans -->
+    <color name="trans_black_80">#CC000000</color>
+    <!-- 80% trans -->
+    <color name="trans_black_70">#B3000000</color>
+    <!-- 70% trans -->
+    <color name="trans_black_54">#8A000000</color>
+    <!-- 54% trans -->
+
+    <color name="trans_white_6">#0Fffffff</color>
+    <!-- 6% trans -->
+    <color name="trans_white_26">#42ffffff</color>
+    <!-- 26% trans -->
+    <color name="trans_white_54">#8Affffff</color>
+    <color name="trans_white_75">#C0ffffff</color>
+    <!-- 54% trans -->
+
+
+</resources>

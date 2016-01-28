@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">AppSdk</string>
+
+    <string name="words_right_now">刚刚</string>
+    <string name="words_few_minutes_ago">%1$d分钟前</string>
+    <string name="words_few_hours_ago">%1$d小时前</string>
+
+
+    <!-- network-->
+    <string name="loading">加载中...</string>
+    <string name="network_not_available">网络异常,请检查手机网络</string>
+    <string name="jsonDataError">json数据解析异常</string>
+    <string name="requestTimeOut">请求超时</string>
+    <string name="requestError">遇到问题，请重试</string>
+
+    <!-- dialog-->
+    <string name="on_loading_text">Loading...</string>
+    <string name="dialog_title">Confirm</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="more">More</string>
+    <string name="dialog_login_out">Are you sure to login out?</string>
+</resources>

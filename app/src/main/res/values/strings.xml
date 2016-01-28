@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MTime</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_play_remote_music">PlayRemoteMusic</string>
+
+    <string name="demo_list_title">Title List for Simple Demo</string>
+    <string name="title_welcome">每天都有美好时刻</string>
+    <string name="ad_skip">跳过%1$ss</string>
+</resources>

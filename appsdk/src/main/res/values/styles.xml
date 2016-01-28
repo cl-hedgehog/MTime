@@ -1,0 +1,65 @@
+<resources>
+
+
+    <!-- Base application theme. -->
+    <style name="AppBaseTheme" parent="android:Theme.Light.NoTitleBar">
+    </style>
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+    </style>
+
+    <style name="dialog_text_new">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Theme_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+    <style name="progressBarStyleHorizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@color/dialog_bg_gray</item>
+        <item name="android:minHeight">1dip</item>
+        <item name="android:maxHeight">1dip</item>
+    </style>
+
+
+    <style name="btn_dialog_style">
+        <item name="android:layout_height">46dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/bg_dialog_selector</item>
+        <item name="android:textColor">@color/text_gray_9</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="content_dialog_style">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:paddingTop">13dp</item>
+        <item name="android:paddingBottom">13dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:gravity">center_vertical|left</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/text_gray_9</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style>
+
+    <style name="title_dialog_style">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:paddingTop">18dp</item>
+        <item name="android:paddingBottom">18dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:gravity">center_vertical|left</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/text_gray_9</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style>
+</resources>

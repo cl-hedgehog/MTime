@@ -1,0 +1,57 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="topbar_imageview_height">55dp</dimen>
+    <dimen name="topbar_imageview_width">55dp</dimen>
+    <dimen name="home_index_indicator_height">56dp</dimen>
+    <dimen name="common_minus_1">-1dp</dimen>
+    <dimen name="common_minus_2">-2dp</dimen>
+    <dimen name="common_minus_3">-3dp</dimen>
+    <dimen name="common_minus_5">-5dp</dimen>
+    <dimen name="common_minus_10">-8dp</dimen>
+    <dimen name="common_0">0dp</dimen>
+    <dimen name="common_1">1dp</dimen>
+    <dimen name="common_2">2dp</dimen>
+    <dimen name="common_3">3dp</dimen>
+    <dimen name="common_4">4dp</dimen>
+    <dimen name="common_5">5dp</dimen>
+    <dimen name="common_6">6dp</dimen>
+    <dimen name="common_7">7dp</dimen>
+    <dimen name="common_8">8dp</dimen>
+    <dimen name="common_9">9dp</dimen>
+    <dimen name="common_10">10dp</dimen>
+    <dimen name="common_11">11dp</dimen>
+    <dimen name="common_12">12dp</dimen>
+    <dimen name="common_13">13dp</dimen>
+    <dimen name="common_14">14dp</dimen>
+    <dimen name="common_15">15dp</dimen>
+    <dimen name="common_16">16dp</dimen>
+    <dimen name="common_17">17dp</dimen>
+    <dimen name="common_18">18dp</dimen>
+    <dimen name="common_19">19dp</dimen>
+    <dimen name="common_20">20dp</dimen>
+    <dimen name="common_22">22dp</dimen>
+    <dimen name="common_25">25dp</dimen>
+    <dimen name="common_26">26dp</dimen>
+    <dimen name="common_28">28dp</dimen>
+    <dimen name="common_29">29dp</dimen>
+    <dimen name="common_30">30dp</dimen>
+    <dimen name="common_32">32dp</dimen>
+    <dimen name="common_33">33dp</dimen>
+    <dimen name="common_35">35dp</dimen>
+    <dimen name="common_37">37dp</dimen>
+    <dimen name="common_40">42dp</dimen>
+    <dimen name="common_45">45dp</dimen>
+    <dimen name="common_48">48dp</dimen>
+    <dimen name="common_49">49dp</dimen>
+    <dimen name="common_50">50dp</dimen>
+    <dimen name="common_115">115dp</dimen>
+    <dimen name="common_55">55dp</dimen>
+    <dimen name="common_60">60dp</dimen>
+    <dimen name="common_100">100dp</dimen>
+    <dimen name="common_105">105dp</dimen>
+    <dimen name="common_110">110dp</dimen>
+    <dimen name="separator_width">1px</dimen>
+</resources>
