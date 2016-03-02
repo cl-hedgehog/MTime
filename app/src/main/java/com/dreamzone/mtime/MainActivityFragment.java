@@ -70,6 +70,9 @@ public class MainActivityFragment extends Fragment {
             case 1:
                 PlayRemoteMusicActivity.start(getActivity());
                 break;
+            case 2:
+                SensorListActivity.start(getActivity());
+                break;
             default:
                 break;
         }
