@@ -27,7 +27,9 @@ public class BaseActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         ActivityStack.getIns().push(this);
+
     }
+
 
     /**
      * 显示加载完成框

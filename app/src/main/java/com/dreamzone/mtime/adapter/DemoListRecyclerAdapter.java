@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dreamzone.mtime.R;
+import com.matrix.appsdk.BaseApp;
+import com.matrix.appsdk.widget.FlexibleToast;
 
 import java.util.List;
 
@@ -35,12 +37,12 @@ public class DemoListRecyclerAdapter extends RecyclerView.Adapter<DemoListRecycl
         this.mInflater = LayoutInflater.from(mContext);
     }
 
-    public void setItemLongClickListener(View.OnLongClickListener itemLongClickListener){
+    public void setItemLongClickListener(View.OnLongClickListener itemLongClickListener) {
         this.mItemLongClickListener = itemLongClickListener;
 
     }
 
-    public void setItemClickListener(View.OnClickListener itemClickListener){
+    public void setItemClickListener(View.OnClickListener itemClickListener) {
         this.mItemClickListener = itemClickListener;
 
     }
@@ -56,8 +58,8 @@ public class DemoListRecyclerAdapter extends RecyclerView.Adapter<DemoListRecycl
         holder.tvItemName.setText(mTitleList.get(position));
         holder.itemView.setTag(mTitleList.get(position));
         // set long click listener
-        if(mItemLongClickListener != null){
-            holder.itemView.setOnLongClickListener(new View.OnLongClickListener(){
+        if (mItemLongClickListener != null) {
+            holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
 
                 @Override
                 public boolean onLongClick(View v) {
@@ -69,13 +71,16 @@ public class DemoListRecyclerAdapter extends RecyclerView.Adapter<DemoListRecycl
             });
         }
         // set click listener
-        if(mItemClickListener != null){
-            holder.itemView.setOnClickListener(new View.OnClickListener(){
+        if (mItemClickListener != null) {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View v) {
                     v.setTag(position);
                     mItemClickListener.onClick(v);
+                    FlexibleToast.Builder builder = new FlexibleToast.Builder(mContext).setFirstText
+                            ("clicked " + position);
+                    BaseApp.getApp().toastShowByBuilder(builder);
                 }
             });
 

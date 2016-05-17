@@ -8,7 +8,6 @@ import android.os.Environment;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.dreamzone.mtime.base.AppContext;
 import com.dreamzone.mtime.base.BaseActivity;
 import com.matrix.appsdk.common.AndroidLogger;
 import com.matrix.appsdk.widget.AutoBgImageView;
@@ -58,7 +57,7 @@ public class SimpleMediaPlayActivity extends BaseActivity implements View.OnClic
                 startBgPlay();
                 break;
             case R.id.aiv_img:
-                AppContext.getAppContext().showtoast("image click");
+                //AppContext.getAppContext().showtoast("image click");
                 Logger.beginInfo(AndroidLogger.TAG).p("on click").end();
                 break;
         }

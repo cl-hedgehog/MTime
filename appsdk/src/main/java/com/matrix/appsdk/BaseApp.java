@@ -6,11 +6,10 @@ import android.content.Context;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
-import android.widget.Toast;
 
 import com.matrix.appsdk.common.AndroidLogger;
 import com.matrix.appsdk.utils.DeviceUtils;
-import com.matrix.appsdk.widget.ToastWithTwoText;
+import com.matrix.appsdk.widget.FlexibleToast;
 
 /**
  * @author BMR
@@ -32,7 +31,7 @@ public class BaseApp extends Application {
     /**
      * 全局的 Toast 对象
      */
-    private Toast toast;
+    private FlexibleToast flexibleToast;
 
     public static void setInstance(BaseApp instance) {
         BaseApp.instance = instance;
@@ -73,6 +72,7 @@ public class BaseApp extends Application {
      * </pre>
      */
     private void initCommon() {
+        flexibleToast = new FlexibleToast(this);
     }
 
     protected boolean isMainProcess(String appPkgName) {
@@ -94,82 +94,18 @@ public class BaseApp extends Application {
         AndroidLogger.initLog(FILE_APP_DIR);
     }
 
-    public void showtoast(String content) {
-
-        if (Looper.myLooper() != Looper.getMainLooper()) {
-            final String text = content;
-            getAppHandler().post(new Runnable() {
-                @Override
-                public void run() {
-                    showToast(text);
-                }
-            });
-        } else {
-            showToast(content);
-        }
-    }
-
-    public void showtoast(int contentId) {
-        showtoast(getString(contentId));
-    }
-
-    private void showToast(String content) {
-        if (toast == null) {
-            toast = Toast.makeText(this, content, Toast.LENGTH_SHORT);
-        } else {
-            toast.setText(content);
-        }
-        toast.show();
-    }
-
-    public void showToastTwoText(String tvStrOne, String tvStrTwo) {
-        if (Looper.myLooper() != Looper.getMainLooper()) {
-            final String strOne = tvStrOne;
-            final String strTwo = tvStrTwo;
-            getAppHandler().post(new Runnable() {
-                @Override
-                public void run() {
-                    showCustomToastTwoText(strOne, strTwo);
-                }
-            });
-        } else {
-            showCustomToastTwoText(tvStrOne, tvStrTwo);
-        }
-    }
-
-    public void showToastTwoText(int idStrOne, int idStrTwo) {
-        final String strOne = getString(idStrOne);
-        final String strTwo = getString(idStrTwo);
+    public void toastShowByBuilder(final FlexibleToast.Builder builder) {
         if (Looper.myLooper() != Looper.getMainLooper()) {
             getAppHandler().post(new Runnable() {
                 @Override
                 public void run() {
-                    showCustomToastTwoText(strOne, strTwo);
+                    flexibleToast.toastShow(builder);
                 }
             });
         } else {
-            showCustomToastTwoText(strOne, strTwo);
+            flexibleToast.toastShow(builder);
         }
     }
 
-    public void showToastTwoText(int idStrOne, int idStrTwo, Object... formatArgs) {
-        final String strOne = getString(idStrOne);
-        final String strTwo = getString(idStrTwo, formatArgs);
-        if (Looper.myLooper() != Looper.getMainLooper()) {
-            getAppHandler().post(new Runnable() {
-                @Override
-                public void run() {
-                    showCustomToastTwoText(strOne, strTwo);
-                }
-            });
-        } else {
-            showCustomToastTwoText(strOne, strTwo);
-        }
-    }
-
-    private void showCustomToastTwoText(String tvStrOne, String tvStrTwo) {
-        ToastWithTwoText.createToastConfig(this).toastShow(tvStrOne, tvStrTwo);
-
-    }
 
 }

@@ -73,6 +73,9 @@ public class MainActivityFragment extends Fragment {
             case 2:
                 SensorListActivity.start(getActivity());
                 break;
+            case 3:
+                OkHttpActivity.start(getActivity());
+                break;
             default:
                 break;
         }

@@ -6,11 +6,15 @@
               android:orientation="vertical">
 
     <Button
+        android:id="@+id/btn_get_toast"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Flexible Toast"/>
+    <Button
         android:id="@+id/btn_get_sensor"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="获取传感器"/>
-
     <ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"

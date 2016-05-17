@@ -5,11 +5,14 @@ import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.dreamzone.mtime.base.BaseActivity;
+import com.matrix.appsdk.BaseApp;
+import com.matrix.appsdk.widget.FlexibleToast;
 
 import java.util.List;
 
@@ -28,6 +31,8 @@ public class SensorListActivity extends BaseActivity implements View.OnClickList
 
     @Bind(R.id.btn_get_sensor)
     Button btnGetSensor;
+    @Bind(R.id.btn_get_toast)
+    Button btnToast;
     @Bind(R.id.tv_sensor)
     TextView tvSensor;
 
@@ -47,6 +52,7 @@ public class SensorListActivity extends BaseActivity implements View.OnClickList
         setContentView(R.layout.activity_sensor_list);
         ButterKnife.bind(this);
         btnGetSensor.setOnClickListener(this);
+        btnToast.setOnClickListener(this);
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensorList = sensorManager.getSensorList(Sensor.TYPE_ALL);// 获得传感器列表
     }
@@ -56,9 +62,30 @@ public class SensorListActivity extends BaseActivity implements View.OnClickList
     public void onClick(View v) {
         if (v.getId() == R.id.btn_get_sensor) {
             getAllSensors();
+            showToastTwo();
+        } else if (v.getId() == R.id.btn_get_toast) {
+            showToastOne();
         }
     }
 
+    private void showToastOne() {
+        FlexibleToast.Builder builder = new FlexibleToast.Builder(this).setGravity(FlexibleToast.GRAVITY_TOP).
+                setFirstText("first").setSecondText("second=" + System.currentTimeMillis());
+        BaseApp.getApp().toastShowByBuilder(builder);
+    }
+
+
+    private void showToastTwo() {
+        View toastView = LayoutInflater.from(this).inflate(R.layout.layout_toast_with_two_text, null, false);
+        TextView tvOne = (TextView) toastView.findViewById(R.id.tv_text_one);
+        TextView tvTwo = (TextView) toastView.findViewById(R.id.tv_text_two);
+        tvOne.setText("customer one");
+        tvTwo.setText("customer two");
+        FlexibleToast.Builder builder = new FlexibleToast.Builder(this).setCustomerView(toastView);
+        BaseApp.getApp().toastShowByBuilder(builder);
+
+
+    }
 
     private void getAllSensors() {
         sb = new StringBuffer();
