@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.dreamzone.mtime.base.BaseActivity;
 import com.matrix.appsdk.BaseApp;
 import com.matrix.appsdk.widget.FlexibleToast;
+import com.matrix.appsdk.widget.ToastWithTwoText;
 
 import java.util.List;
 
@@ -64,14 +65,35 @@ public class SensorListActivity extends BaseActivity implements View.OnClickList
             getAllSensors();
             showToastTwo();
         } else if (v.getId() == R.id.btn_get_toast) {
-            showToastOne();
+            showToastThread();
         }
     }
 
-    private void showToastOne() {
-        FlexibleToast.Builder builder = new FlexibleToast.Builder(this).setGravity(FlexibleToast.GRAVITY_TOP).
-                setFirstText("first").setSecondText("second=" + System.currentTimeMillis());
-        BaseApp.getApp().toastShowByBuilder(builder);
+    /**
+     * 这种用法会Crash，用的是当前Activity的context初始化
+     */
+    private void showToastThreadCrash() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                ToastWithTwoText.createToastConfig(SensorListActivity.this).toastShow("thread", "SensorListActivity");
+            }
+        }).start();
+
+    }
+
+    private void showToastThread() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                FlexibleToast.Builder builder = new FlexibleToast.Builder(SensorListActivity.this).setGravity(FlexibleToast
+                        .GRAVITY_TOP).
+                        setFirstText("first").setSecondText("second=" + System.currentTimeMillis());
+                BaseApp.getApp().toastShowByBuilder(builder);
+            }
+        }).start();
+
     }
 
 
@@ -83,7 +105,6 @@ public class SensorListActivity extends BaseActivity implements View.OnClickList
         tvTwo.setText("customer two");
         FlexibleToast.Builder builder = new FlexibleToast.Builder(this).setCustomerView(toastView);
         BaseApp.getApp().toastShowByBuilder(builder);
-
 
     }
 
