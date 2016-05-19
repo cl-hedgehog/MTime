@@ -4,14 +4,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.dreamzone.mtime.base.BaseActivity;
 import com.matrix.appsdk.BaseApp;
+import com.matrix.appsdk.utils.Tools;
 import com.matrix.appsdk.widget.FlexibleToast;
 import com.matrix.appsdk.widget.ToastWithTwoText;
 
@@ -36,6 +41,8 @@ public class SensorListActivity extends BaseActivity implements View.OnClickList
     Button btnToast;
     @Bind(R.id.tv_sensor)
     TextView tvSensor;
+    @Bind(R.id.ll_root)
+    LinearLayout llRoot;
 
     private SensorManager sensorManager;
     private StringBuffer sb;
@@ -56,8 +63,31 @@ public class SensorListActivity extends BaseActivity implements View.OnClickList
         btnToast.setOnClickListener(this);
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensorList = sensorManager.getSensorList(Sensor.TYPE_ALL);// 获得传感器列表
+        int[] sSensor = Tools.measureView(btnGetSensor, 1, Tools.dip2px(this, 200), Tools.dip2px(this, 50));
+        int[] sToast = Tools.measureView(btnToast, 0, 0, 0);
+        Log.e("TEST", "sSensor width= " + sSensor[0] + ", height=" + sSensor[1]);
+        Log.e("TEST", "sToast width= " + sToast[0] + ", height=" + sToast[1]);
+
+        llRoot.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+
+            @Override
+            public void onGlobalLayout() {
+                Log.e("TEST", "btnGetSensor width= " + btnGetSensor.getWidth() + ", height=" + btnGetSensor.getHeight());
+                Log.e("TEST", "btnToast width= " + btnToast.getWidth() + ", height=" + btnToast.getHeight());
+                if (btnGetSensor.getWidth() > 0) {
+                    removeOnGlobalLayoutListener(llRoot, this);
+                }
+            }
+        });
     }
 
+    public static void removeOnGlobalLayoutListener(View v, ViewTreeObserver.OnGlobalLayoutListener listener) {
+        if (Build.VERSION.SDK_INT < 16) {
+            v.getViewTreeObserver().removeGlobalOnLayoutListener(listener);
+        } else {
+            v.getViewTreeObserver().removeOnGlobalLayoutListener(listener);
+        }
+    }
 
     @Override
     public void onClick(View v) {
