@@ -14,6 +14,7 @@ import android.graphics.RectF;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.view.Display;
+import android.view.View;
 import android.widget.Toast;
 
 import java.io.File;
@@ -358,6 +359,32 @@ public class Tools {
      */
     public static long dateToLong(Date date) {
         return date.getTime();
+    }
+
+    /**
+     * 针对wrapContent和固定数值两种方式测量View的高宽
+     * @param view 要测量的view
+     * @param mode wrapContent：0； 固定值：1
+     * @param width 固定宽度px
+     * @param height 固定高度px
+     * @return 测量后的View的宽高
+     */
+    public static int[] measureView(View view, int mode, int width, int height) {
+        if (mode == 0) {
+            // wrap_content
+            int widthMeasureSpec = View.MeasureSpec.makeMeasureSpec(width, View.MeasureSpec.EXACTLY);
+            int heightMeasureSpec = View.MeasureSpec.makeMeasureSpec(height, View.MeasureSpec.EXACTLY);
+            view.measure(widthMeasureSpec, heightMeasureSpec);
+            return new int[]{view.getWidth(), view.getHeight()};
+        } else if (mode == 1) {
+            // fix value
+            int widthMeasureSpec = View.MeasureSpec.makeMeasureSpec((1 << 30) - 1, View.MeasureSpec.AT_MOST);
+            int heightMeasureSpec = View.MeasureSpec.makeMeasureSpec((1 << 30) - 1, View.MeasureSpec.AT_MOST);
+            view.measure(widthMeasureSpec, heightMeasureSpec);
+            return new int[]{view.getWidth(), view.getHeight()};
+        }
+        return new int[]{0, 0};
+
     }
 
 }
