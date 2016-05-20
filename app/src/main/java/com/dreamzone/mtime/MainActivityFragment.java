@@ -76,6 +76,9 @@ public class MainActivityFragment extends Fragment {
             case 3:
                 OkHttpActivity.start(getActivity());
                 break;
+            case 4:
+                SnackAndToastActivity.start(getActivity());
+                break;
             default:
                 break;
         }

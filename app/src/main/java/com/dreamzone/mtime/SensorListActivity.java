@@ -6,6 +6,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -95,7 +96,7 @@ public class SensorListActivity extends BaseActivity implements View.OnClickList
             getAllSensors();
             showToastTwo();
         } else if (v.getId() == R.id.btn_get_toast) {
-            showToastThread();
+            showSnackbar(v);
         }
     }
 
@@ -136,6 +137,11 @@ public class SensorListActivity extends BaseActivity implements View.OnClickList
         FlexibleToast.Builder builder = new FlexibleToast.Builder(this).setCustomerView(toastView);
         BaseApp.getApp().toastShowByBuilder(builder);
 
+    }
+
+    private void showSnackbar(View view){
+        Snackbar.make(view, "Simple Demo will continue to update...", Snackbar.LENGTH_LONG).setAction
+                ("Action", null).show();
     }
 
     private void getAllSensors() {

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/ll_root"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:layout_margin="10dp"
+              android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_toast_global"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Global Toast"/>
+
+    <Button
+        android:id="@+id/btn_toast_local"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="local Toast"/>
+
+    <Button
+        android:id="@+id/btn_snackbar_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Normal SnackBar"/>
+
+    <Button
+        android:id="@+id/btn_snackbar_customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Custom SnackBar"/>
+
+    <EditText
+        android:id="@+id/et_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="input"/>
+</LinearLayout>

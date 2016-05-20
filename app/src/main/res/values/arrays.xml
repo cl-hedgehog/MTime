@@ -5,5 +5,6 @@
         <item>Simple RemoteService</item>
         <item>Sensor List</item>
         <item>OkHttp https test</item>
+        <item>Snackbar and Toast</item>
     </string-array>
 </resources>
