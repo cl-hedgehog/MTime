@@ -8,7 +8,9 @@
 3. PlayRemoteMusicActivity：模拟远程服务的调用。需要安装RemoteService的app，地址：https://github.com/maoranbian/RemoteService
 4. SensorListActivity：打印所有的传感器
 5. OkHttpActivity：一个OkHttp访问https地址的简单例子
-6. SnackAndToastActivity：展示全局Toast和Snackbar的使用方法 
+6. SnackAndToastActivity：展示全局Toast和Snackbar的使用方法，使用文档“
+    * [欢迎使用Snackbar]（http://www.jianshu.com/p/f60e8d8271ea）
+    * [Android App中使用全局Toast]（http://www.jianshu.com/p/b86fa44e82fa）
 
 ###功能介绍
 * 包含RecyclerView和CardView的简单使用
