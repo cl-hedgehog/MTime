@@ -8,7 +8,7 @@ import com.dreamzone.mtime.base.AppContext;
 import com.dreamzone.mtime.base.BaseActivity;
 import com.matrix.appsdk.utils.Tools;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -28,7 +28,7 @@ import butterknife.ButterKnife;
  */
 public class WelcomeActivity extends BaseActivity {
 
-    @Bind(R.id.tv_welcome)
+    @BindView(R.id.tv_welcome)
     TextView tvWelcome;
 
     private String adImgUrl;

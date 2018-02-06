@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.dreamzone.mtime.base.BaseCompatActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -24,7 +24,7 @@ import butterknife.ButterKnife;
  */
 public class MainActivity extends BaseCompatActivity {
 
-    @Bind(R.id.ll_root)
+    @BindView(R.id.ll_root)
     CoordinatorLayout llRoot;
     Toolbar toolbar;
 

@@ -19,7 +19,7 @@ import com.matrix.appsdk.BaseApp;
 import com.matrix.appsdk.widget.FlexibleToast;
 import com.matrix.appsdk.widget.ToastWithTwoText;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -31,17 +31,17 @@ import butterknife.ButterKnife;
 public class SnackAndToastActivity extends BaseActivity implements View.OnClickListener {
 
 
-    @Bind(R.id.btn_toast_global)
+    @BindView(R.id.btn_toast_global)
     Button btnToastGlobal;
-    @Bind(R.id.btn_toast_local)
+    @BindView(R.id.btn_toast_local)
     Button btnToastLocal;
-    @Bind(R.id.btn_snackbar_normal)
+    @BindView(R.id.btn_snackbar_normal)
     Button btnSnackbarNormal;
-    @Bind(R.id.ll_root)
+    @BindView(R.id.ll_root)
     LinearLayout llRoot;
-    @Bind(R.id.btn_snackbar_customer)
+    @BindView(R.id.btn_snackbar_customer)
     Button btnSnackbarCustomer;
-    @Bind(R.id.et_input)
+    @BindView(R.id.et_input)
     EditText etInput;
 
 

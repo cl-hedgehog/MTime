@@ -3,6 +3,7 @@ package com.matrix.appsdk.utils;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.BitmapFactory.Options;
@@ -24,11 +25,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Calendar;
 import java.util.Locale;
 
 @SuppressLint("NewApi")
-public class ImageUtils {
+public class BitmapUtils {
 
     public static Bitmap createBitmap(String path) {
         Options opts = new Options();
@@ -176,6 +178,32 @@ public class ImageUtils {
         matrix.postScale(ratio, ratio);
         return Bitmap.createBitmap(bm, 0, 0, w, h, matrix, true);
     }
+
+    /**
+     * 从Assets中读取图片
+     *
+     * @param mContext
+     * @param fileName 文件名
+     * @return
+     */
+    public static Bitmap getImageFromAssetsFile(Context mContext,
+                                                String fileName) {
+        Bitmap image = null;
+        AssetManager am = mContext.getResources().getAssets();
+        try {
+            InputStream is = am.open(fileName);
+            image = BitmapFactory.decodeStream(is);
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return image;
+
+    }
+
+
+
 
     public static Bitmap makeRoundCorner(Bitmap bitmap) {
         int width = bitmap.getWidth();
@@ -381,7 +409,7 @@ public class ImageUtils {
             double scale = Math.sqrt(ratio);
             int widthTo = (int) ((opts.outWidth / scale) / 2) * 2;
 
-            Bitmap bitmap = ImageUtils.createBitmap(filename, widthTo);
+            Bitmap bitmap = BitmapUtils.createBitmap(filename, widthTo);
             new DateFormat();
             String name = DateFormat.format("yyyyMMdd_hhmmss", Calendar.getInstance(Locale.CHINA)) + ".jpg";
             File dir = new File(imgSavePath);
@@ -389,7 +417,7 @@ public class ImageUtils {
                 dir.mkdirs();
             }
             String tempfilename = imgSavePath + name;
-            boolean bSuccess = ImageUtils.saveBmp(bitmap, tempfilename);
+            boolean bSuccess = BitmapUtils.saveBmp(bitmap, tempfilename);
             if (bSuccess) {
                 return tempfilename;
             } else {
@@ -427,7 +455,7 @@ public class ImageUtils {
             bitmap = rotateAndMirror(bitmap, orient, false, true);
             boolean needCompress = bitmap.getWidth() * bitmap.getHeight() > screenWidth * screenHeight;
             if (needCompress) {
-                bitmap = ImageUtils.ResizedBitmap(bitmap, screenWidth, screenHeight);
+                bitmap = BitmapUtils.ResizedBitmap(bitmap, screenWidth, screenHeight);
             }
 
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -435,7 +463,7 @@ public class ImageUtils {
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
             // size还大的话直接压缩搭配500*500
             if (baos.toByteArray().length > SDKConstans.MAX_UNCOMPRESS_IMAGE_SIZE) {
-                bitmap = ImageUtils.ResizedBitmap(bitmap, 500, 500);
+                bitmap = BitmapUtils.ResizedBitmap(bitmap, 500, 500);
             }
             // jpeg < 100k
             FileOutputStream b = null;

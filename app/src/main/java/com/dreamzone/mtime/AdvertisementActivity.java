@@ -13,7 +13,7 @@ import com.dreamzone.mtime.common.AppSPUtils;
 import com.matrix.appsdk.utils.CountDownTimerUtils;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -25,9 +25,9 @@ import butterknife.ButterKnife;
  */
 public class AdvertisementActivity extends BaseActivity implements View.OnClickListener{
 
-    @Bind(R.id.iv_advertisement)
+    @BindView(R.id.iv_advertisement)
     ImageView ivAdvertisement;
-    @Bind(R.id.tv_skip)
+    @BindView(R.id.tv_skip)
     TextView tvSkip;
 
     private String adImgUrl = null;

@@ -13,7 +13,8 @@ import com.matrix.appsdk.widget.FlexibleToast;
 
 import java.util.List;
 
-import butterknife.Bind;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -95,9 +96,9 @@ public class DemoListRecyclerAdapter extends RecyclerView.Adapter<DemoListRecycl
 
 
     public static class ImageTextViewHoler extends RecyclerView.ViewHolder {
-        @Bind(R.id.tv_item_index)
+        @BindView(R.id.tv_item_index)
         TextView tvItemIndex;
-        @Bind(R.id.tv_item_name)
+        @BindView(R.id.tv_item_name)
         TextView tvItemName;
 
         public ImageTextViewHoler(View itemView) {

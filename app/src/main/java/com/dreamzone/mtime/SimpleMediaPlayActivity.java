@@ -15,7 +15,7 @@ import com.trace.mtk.log.Logger;
 
 import java.io.IOException;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -28,9 +28,9 @@ public class SimpleMediaPlayActivity extends BaseActivity implements View.OnClic
 
 
     private static MediaPlayer mp = null;
-    @Bind(R.id.aiv_img)
+    @BindView(R.id.aiv_img)
     AutoBgImageView aivImg;
-    @Bind(R.id.ll_play)
+    @BindView(R.id.ll_play)
     LinearLayout llPlay;
     private Thread thread;
 

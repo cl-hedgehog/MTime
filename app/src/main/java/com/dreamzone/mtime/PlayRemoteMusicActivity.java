@@ -19,7 +19,7 @@ import com.dreamzone.remoteservice.IMusicControlService;
 import com.matrix.appsdk.common.AndroidLogger;
 import com.trace.mtk.log.Logger;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -30,17 +30,17 @@ import butterknife.ButterKnife;
  */
 public class PlayRemoteMusicActivity extends BaseCompatActivity implements View.OnClickListener {
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.btn_play)
+    @BindView(R.id.btn_play)
     ImageButton btnPlay;
-    @Bind(R.id.btn_pause)
+    @BindView(R.id.btn_pause)
     ImageButton btnPause;
-    @Bind(R.id.btn_stop)
+    @BindView(R.id.btn_stop)
     ImageButton btnStop;
-    @Bind(R.id.fab)
+    @BindView(R.id.fab)
     FloatingActionButton fab;
-    @Bind(R.id.tv_play_status)
+    @BindView(R.id.tv_play_status)
     TextView tvPlayStatus;
     private IMusicControlService controlService;
 
@@ -59,7 +59,6 @@ public class PlayRemoteMusicActivity extends BaseCompatActivity implements View.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         initToolbar();
-
         initAIDLProxy();
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

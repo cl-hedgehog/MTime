@@ -23,7 +23,7 @@ import com.matrix.appsdk.widget.ToastWithTwoText;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static android.hardware.Sensor.TYPE_PROXIMITY;
@@ -36,13 +36,13 @@ import static android.hardware.Sensor.TYPE_PROXIMITY;
  */
 public class SensorListActivity extends BaseActivity implements View.OnClickListener {
 
-    @Bind(R.id.btn_get_sensor)
+    @BindView(R.id.btn_get_sensor)
     Button btnGetSensor;
-    @Bind(R.id.btn_get_toast)
+    @BindView(R.id.btn_get_toast)
     Button btnToast;
-    @Bind(R.id.tv_sensor)
+    @BindView(R.id.tv_sensor)
     TextView tvSensor;
-    @Bind(R.id.ll_root)
+    @BindView(R.id.ll_root)
     LinearLayout llRoot;
 
     private SensorManager sensorManager;

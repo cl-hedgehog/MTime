@@ -15,7 +15,7 @@ import com.dreamzone.mtime.adapter.DemoListRecyclerAdapter;
 import java.util.Arrays;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -23,9 +23,9 @@ import butterknife.ButterKnife;
  */
 public class MainActivityFragment extends Fragment {
 
-    @Bind(R.id.tv_demo_info)
+    @BindView(R.id.tv_demo_info)
     TextView tvDemoInfo;
-    @Bind(R.id.rv_demo_list)
+    @BindView(R.id.rv_demo_list)
     RecyclerView rvDemoList;
 
     private List<String> titleList;
@@ -79,6 +79,18 @@ public class MainActivityFragment extends Fragment {
             case 4:
                 SnackAndToastActivity.start(getActivity());
                 break;
+            case 5:
+                FastBlurActivity.start(getActivity());
+                break;
+            case 6:
+                RotatePhotoActivity.start(getActivity());
+                break;
+            case 7:
+                TestDemoActivity.start(getActivity());
+                break;
+            case 8:
+                SerializeDemoActivity.start(getActivity());
+                break;
             default:
                 break;
         }
@@ -87,6 +99,5 @@ public class MainActivityFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 }

@@ -11,6 +11,9 @@
 6. SnackAndToastActivity：展示全局Toast和Snackbar的使用方法，使用文档“
     * [欢迎使用Snackbar](http://www.jianshu.com/p/f60e8d8271ea)
     * [Android App中使用全局Toast](http://www.jianshu.com/p/b86fa44e82fa)
+7. FastBlurActivity:一个快速毛玻璃虚化效果，博客[一种快速毛玻璃虚化效果实现](http://www.androidchina.net/4626.html)的实现。
+
+8. 增加了一些实验demo的代码，比如rubust热修复的引入，一些bug的调试验证，比较乱，下一步做一个好的分类
 
 ###功能介绍
 * 包含RecyclerView和CardView的简单使用
