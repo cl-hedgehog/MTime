@@ -63,6 +63,7 @@ public class FastBlurActivity extends BaseActivity {
             }
         });
 
+        Log.d("MTime", " tvRatio.isHardwareAccelerated() = " + tvRatio.isHardwareAccelerated());
     }
 
     private void fastBlurByRatio(int radius){

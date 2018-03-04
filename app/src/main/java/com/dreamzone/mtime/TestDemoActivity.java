@@ -56,6 +56,7 @@ public class TestDemoActivity extends BaseActivity {
         TestSingle testSingle = TestSingle.getTestSingle(this);
 //        memoryLeak = new MemoryLeak();
         Log.d("MTime", "TestDemoActivity onCreate = " + this.hashCode());
+
         mCircleView = findViewById(R.id.dot_view);
         view = findViewById(R.id.tv_test);
         view1= findViewById(R.id.tv_test1);
@@ -80,11 +81,13 @@ public class TestDemoActivity extends BaseActivity {
 //                }
             }
         });
+
         view1.setText("Patch");
         view1.setOnClickListener(
                 //RobustModify.modify();
                 v -> patch());
 
+        Log.d("MTime", "TestDemoActivity view.isHardwareAccelerated() = " + view.isHardwareAccelerated());
 //        LeakThread leakThread = new LeakThread();
 //        leakThread.start();
     }
@@ -127,7 +130,11 @@ public class TestDemoActivity extends BaseActivity {
         return super.dispatchTouchEvent(ev);
     }
 
-
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        Log.d("MTime", " TestDemoActivity onTouchEvent");
+        return true;
+    }
 
     private void test() {
         float a1=getResources().getDimension(R.dimen.activity_vertical_margin1);

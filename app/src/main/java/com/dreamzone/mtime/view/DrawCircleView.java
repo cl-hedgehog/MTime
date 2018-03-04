@@ -42,6 +42,8 @@ public class DrawCircleView extends View {
         super.onDraw(canvas);
         //开始画圆，float cx开始x的位置, float cy开始Y的位置, float radius圆的半径, @NonNull Paint paint画笔
         canvas.drawCircle(currentX,currentY,30,paint);
+        Log.d("MTime", "TestDemoActivity DrawCircleView.isHardwareAccelerated() = " + isHardwareAccelerated());
+        Log.d("MTime", "TestDemoActivity Canvas.isHardwareAccelerated() = " + canvas.isHardwareAccelerated());
     }
 
     @Override
